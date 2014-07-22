@@ -1,6 +1,7 @@
 body {
-	padding-top: 51px;
+	padding-top: 100px;
 	background-color: #1C1006;
+	color: white;
 }
 
 #flash-notice {
@@ -16,4 +17,9 @@ body {
 #flash-warning {
 	@extend .alert;
 	@extend .alert-warning;
+}
+
+#content-pane {
+	color: #D3D3D3;
+	background-color: #332011;
 }
