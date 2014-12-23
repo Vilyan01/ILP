@@ -20,6 +20,9 @@
         <td><%= campingtripplanningtool.fname + " " + campingtripplanningtool.lname %></td>
         <td><%= campingtripplanningtool.city %></td>
         <td><%= campingtripplanningtool.state %></td>
+        <% if user_signed_in? && current_user.email == 'bheller2010@live.com' %>
+          <td><%= button_to 'Destroy', campingtripplanningtool, class: "btn btn-primary", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
