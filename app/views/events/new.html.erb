@@ -1,0 +1,9 @@
+<% if user_signed_in? && current_user.email == 'bheller2010@live.com' %>
+	<h1>New event</h1>
+
+	<%= render 'form' %>
+
+	<%= link_to 'Back', events_path %>
+<% else %>
+	Only admins can use this feature.
+<% end %>

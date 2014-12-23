@@ -1,0 +1,17 @@
+<% if user_signed_in? %>
+	<% if current_user.email == 'bheller2010@live.com' %>
+		<h1>New post</h1>
+
+		<%= render 'form' %>
+
+		<%= link_to 'Back', posts_path %>
+	<% else %>
+		Only administrators can use this feature...
+	<% end %>
+
+<% else %>
+	
+	Only administrator can use this feature...
+
+<% end %>
+

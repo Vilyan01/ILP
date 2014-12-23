@@ -1,12 +1,35 @@
 <div class="col-md-4">
 	<h3>Public Events</h3>
 	<hr/>
-	No events scheduled.
+	<% if @events.length > 0 %>
+		<% @events.take(5).each do |event| %>
+			<div class="article">
+				<h4><%= event.title %><h4>
+				<p>Game: <%= event.game %></p>
+				<p>Date/time: <%= event.date %></p>
+				<p>Description: <%= event.description %></p>
+			</div>
+		<% end %>
+	<% else %>
+	No Events Scheduled
+	<% end %>
 </div>
 <div class="col-md-8">
 	<h3>News Feed</h3>
 	<hr/>
-	New website is coming online.  Please submit any bugs to Capt Obviouse or Vilyan K'Vere.
+	<% if @posts.length > 0 %>
+		<% @posts.take(5).each do |post| %>
+			<div class="article">
+		  		<%= link_to post.title, post, class:"post-title" %> posted <%= time_ago_in_words post.created_at %> ago.
+		  		<br/>
+		  		<br/>
+		  		<%= h(post.text).gsub(/\n/, '<br/>').html_safe %>
+	  		</div>
+  		<br/>
+  		<% end %>
+  	<% else %>
+  		No posts shown.
+	<% end %>
 </div>
 <br/>
 
