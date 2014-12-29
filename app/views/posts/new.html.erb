@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-	<% if current_user.email == 'bheller2010@live.com' %>
+	<% if (current_user.email == 'bheller2010@live.com' || current_user.email == 'sixstringjesse@gmail.com' || current_user.email == 'jamescook828@gmail.com') %>
 		<h1>New post</h1>
 
 		<%= render 'form' %>
