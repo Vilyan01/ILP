@@ -51,6 +51,10 @@ class CampingtripplanningtoolsController < ApplicationController
     end
   end
 
+  def list
+    @campingtripplanningtools = Campingtripplanningtool.all
+  end
+
   # DELETE /campingtripplanningtools/1
   # DELETE /campingtripplanningtools/1.json
   def destroy

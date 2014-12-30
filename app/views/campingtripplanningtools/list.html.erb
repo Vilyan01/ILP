@@ -1,0 +1,33 @@
+<h1>Attendance</h1>
+<p>At this point this page will just show who is planning on attending the camping trip.  In the future I plan on adding a map to show where each person is as well as the exact center of each of us as sort of a suggestion as to where we should have the camping trip.</p>
+<p>I was also thinking about adding a section to show what people can bring.  If you think that would be a good idea or if you have any other suggestions, please add a comment to the 3/1 81's post I submit about this tool and I will see about adding it to the page.</p>
+
+<hr>
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>City</th>
+      <th>State</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @campingtripplanningtools.each do |campingtripplanningtool| %>
+      <tr>
+        <td><%= campingtripplanningtool.fname + " " + campingtripplanningtool.lname %></td>
+        <td><%= campingtripplanningtool.city %></td>
+        <td><%= campingtripplanningtool.state %></td>
+        <% if user_signed_in? && current_user.email == 'bheller2010@live.com' %>
+          <td><%= button_to 'Destroy', campingtripplanningtool, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add Name', new_campingtripplanningtool_path, class: "btn btn-primary" %>
