@@ -1,3 +1,5 @@
 == README
 
-For the EVE ILP corp site.  Corp admins will be able to create, edit, and view detailed op orders.  Members will be able to view the orders and submit comments on them.  Mostly for educational purposes.
+ADD Gamerz site (www.addgamerz.com).  A learning(ish) blog/event planner to inform followers of upcoming events as well as any updates on vidoes we are creating.
+
+The website also contains a tool for planning the annual 3/1 81's camping trip.  At the time of writing its more of just a list as to who is attending but I am researching tools for geocoding based on city/state and making a map view to not only show where the user is located, but a central location to everyone as sort of a suggestion to where to host the camping trip (Hoping for vegas)

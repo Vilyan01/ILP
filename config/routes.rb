@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'campingtripplanningtools/list' => 'campingtripplanningtools#list'
   resources :campingtripplanningtools
 
   resources :events
