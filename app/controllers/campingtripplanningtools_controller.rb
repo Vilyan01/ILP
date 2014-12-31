@@ -5,11 +5,36 @@ class CampingtripplanningtoolsController < ApplicationController
   # GET /campingtripplanningtools.json
   def index
     @campingtripplanningtools = Campingtripplanningtool.all
+    @meanmarker = 1
+    @meanlat = 0;
+    @meanlong = 0;
+    @count = 0;
+    @campingtripplanningtools.each do |user|
+      @meanlat += user.latitude
+      @meanlong+= user.longitude
+      @count += 1
+    end
+    @meanlat = @meanlat / @count
+    @meanlong = @meanlong / @count
+    @hash = Gmaps4rails.build_markers(@campingtripplanningtools) do |user, marker|
+      marker.lat user.latitude
+      marker.lng user.longitude
+      marker.title (user.fname + " " + user.lname)
+    end
+    @hash2 = Gmaps4rails.build_markers(@meanmarker) do |user, marker|
+      marker.lat @meanlat
+      marker.lng @meanlong
+      marker.title "Central Location"
+    end
   end
 
   # GET /campingtripplanningtools/1
   # GET /campingtripplanningtools/1.json
   def show
+  end
+
+  def list
+    @campingtripplanningtools = Campingtripplanningtool.all
   end
 
   # GET /campingtripplanningtools/new
@@ -51,10 +76,6 @@ class CampingtripplanningtoolsController < ApplicationController
     end
   end
 
-  def list
-    @campingtripplanningtools = Campingtripplanningtool.all
-  end
-
   # DELETE /campingtripplanningtools/1
   # DELETE /campingtripplanningtools/1.json
   def destroy
@@ -73,7 +94,6 @@ class CampingtripplanningtoolsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def campingtripplanningtool_params
-      params.require(:campingtripplanningtool).permit(:fname, :lname, :city, :state)
+      params.require(:campingtripplanningtool).permit(:fname, :lname, :city, :state, :latitude, :longitude, :gmaps)
     end
 end
-

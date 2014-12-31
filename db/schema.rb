@@ -11,13 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141213001524) do
+ActiveRecord::Schema.define(version: 20141231081243) do
 
   create_table "campingtripplanningtools", force: true do |t|
     t.string   "fname"
     t.string   "lname"
     t.string   "city"
     t.string   "state"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.boolean  "gmaps"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -18,7 +18,7 @@ class CampingtripplanningtoolsControllerTest < ActionController::TestCase
 
   test "should create campingtripplanningtool" do
     assert_difference('Campingtripplanningtool.count') do
-      post :create, campingtripplanningtool: { city: @campingtripplanningtool.city, fname: @campingtripplanningtool.fname, lname: @campingtripplanningtool.lname, state: @campingtripplanningtool.state }
+      post :create, campingtripplanningtool: { city: @campingtripplanningtool.city, fname: @campingtripplanningtool.fname, gmaps: @campingtripplanningtool.gmaps, latitude: @campingtripplanningtool.latitude, lname: @campingtripplanningtool.lname, longitude: @campingtripplanningtool.longitude, state: @campingtripplanningtool.state }
     end
 
     assert_redirected_to campingtripplanningtool_path(assigns(:campingtripplanningtool))
@@ -35,7 +35,7 @@ class CampingtripplanningtoolsControllerTest < ActionController::TestCase
   end
 
   test "should update campingtripplanningtool" do
-    patch :update, id: @campingtripplanningtool, campingtripplanningtool: { city: @campingtripplanningtool.city, fname: @campingtripplanningtool.fname, lname: @campingtripplanningtool.lname, state: @campingtripplanningtool.state }
+    patch :update, id: @campingtripplanningtool, campingtripplanningtool: { city: @campingtripplanningtool.city, fname: @campingtripplanningtool.fname, gmaps: @campingtripplanningtool.gmaps, latitude: @campingtripplanningtool.latitude, lname: @campingtripplanningtool.lname, longitude: @campingtripplanningtool.longitude, state: @campingtripplanningtool.state }
     assert_redirected_to campingtripplanningtool_path(assigns(:campingtripplanningtool))
   end
 

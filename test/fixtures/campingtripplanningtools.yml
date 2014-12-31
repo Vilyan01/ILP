@@ -5,9 +5,15 @@ one:
   lname: MyString
   city: MyString
   state: MyString
+  latitude: 1.5
+  longitude: 1.5
+  gmaps: false
 
 two:
   fname: MyString
   lname: MyString
   city: MyString
   state: MyString
+  latitude: 1.5
+  longitude: 1.5
+  gmaps: false
